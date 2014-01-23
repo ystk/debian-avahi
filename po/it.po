@@ -1,5 +1,5 @@
 # Italian translation of avahi
-# Copyright (C) 2008, 2009 the avahi copyright holder
+# Copyright (C) 2008, 2009, 2010 the avahi copyright holder
 # This file is distributed under the same license as the avahi package.
 #
 # Silvio Pierro <perplesso82@gmail.com>, 2008.
@@ -7,21 +7,22 @@
 # Francesco Tombolini <tombo@adamantio.net>, 2008.
 # Luca Ferretti <elle.uca@ubuntu-it.org>, 2009.
 # Luca Ferretti <elle.uca@libero.it>, 2009.
-# Milo Casagrande <milo@ubuntu.com>, 2009.
+# Milo Casagrande <milo@ubuntu.com>, 2009, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: avahi.master-tx.it\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-07-13 03:02+0200\n"
-"PO-Revision-Date: 2009-12-09 21:32+0100\n"
+"POT-Creation-Date: 2011-04-02 03:23+0200\n"
+"PO-Revision-Date: 2010-09-05 16:48+0200\n"
 "Last-Translator: Milo Casagrande <milo@ubuntu.com>\n"
 "Language-Team: Italian <tp@lists.linux.it>\n"
+"Language: it\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Launchpad-Export-Date: 2009-12-08 18:32+0000\n"
-"X-Generator: Launchpad (build Unknown)\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Launchpad (build Unknown)\n"
 
 #: ../avahi-common/error.c:30
 msgid "OK"
@@ -263,41 +264,35 @@ msgstr "Esplora i servizi Zeroconf disponibili sulla propria rete"
 
 #: ../avahi-python/avahi-discover/avahi-discover.py:224
 msgid "TXT"
-msgstr ""
+msgstr "TXT"
 
 #: ../avahi-python/avahi-discover/avahi-discover.py:226
-#, fuzzy
 msgid "TXT Data:"
-msgstr "Dati TXT"
+msgstr "Dati TXT:"
 
 #: ../avahi-python/avahi-discover/avahi-discover.py:226
-#, fuzzy
 msgid "empty"
-msgstr "È vuoto"
+msgstr "vuoto"
 
 #: ../avahi-python/avahi-discover/avahi-discover.py:228
-#, fuzzy
 msgid "Service Type:"
-msgstr "Tipo di servizio"
+msgstr "Tipo di servizio:"
 
 #: ../avahi-python/avahi-discover/avahi-discover.py:229
-#, fuzzy
 msgid "Service Name:"
-msgstr "Nome di servizio"
+msgstr "Nome del servizio:"
 
 #: ../avahi-python/avahi-discover/avahi-discover.py:230
-#, fuzzy
 msgid "Domain Name:"
-msgstr "Dominio"
+msgstr "Nome del dominio:"
 
 #: ../avahi-python/avahi-discover/avahi-discover.py:231
 msgid "Interface:"
-msgstr ""
+msgstr "Interfaccia:"
 
 #: ../avahi-python/avahi-discover/avahi-discover.py:232
-#, fuzzy
 msgid "Address:"
-msgstr "Indirizzo"
+msgstr "Indirizzo:"
 
 #: ../avahi-ui/avahi-ui.c:185
 msgid "Browse Service Types"
@@ -323,7 +318,7 @@ msgstr "Tipo di servizio"
 msgid "The service type of the selected service"
 msgstr "Il tipo di servizio del servizio selezionato"
 
-#: ../avahi-ui/avahi-ui.c:202 ../avahi-ui/avahi-ui.c:1019
+#: ../avahi-ui/avahi-ui.c:202 ../avahi-ui/avahi-ui.c:1023
 msgid "Service Name"
 msgstr "Nome di servizio"
 
@@ -364,16 +359,14 @@ msgid "The TXT data of the resolved service"
 msgstr "I dati TXT del servizio risolto"
 
 #: ../avahi-ui/avahi-ui.c:230
-#, fuzzy
 msgid "Resolve Service"
 msgstr "Risoluzione del servizio"
 
 #: ../avahi-ui/avahi-ui.c:230
 msgid "Resolve the selected service automatically before returning"
-msgstr ""
+msgstr "Risolve automaticamente il servizio selezionato prima di uscire"
 
 #: ../avahi-ui/avahi-ui.c:236
-#, fuzzy
 msgid "Resolve Service Host Name"
 msgstr "Risoluzione del nome host del servizio"
 
@@ -381,6 +374,8 @@ msgstr "Risoluzione del nome host del servizio"
 msgid ""
 "Resolve the host name of the selected service automatically before returning"
 msgstr ""
+"Risolve automaticamente il l'hostname del servizio selezionato prima di "
+"uscire"
 
 #: ../avahi-ui/avahi-ui.c:242
 msgid "Address family"
@@ -390,96 +385,96 @@ msgstr "Famiglia indirizzi"
 msgid "The address family for host name resolution"
 msgstr "La famiglia di indirizzi per la risoluzione dei nomi host"
 
-#: ../avahi-ui/avahi-ui.c:324
+#: ../avahi-ui/avahi-ui.c:326
 #, c-format
 msgid "Avahi client failure: %s"
 msgstr "Fallimento client avahi: %s"
 
-#: ../avahi-ui/avahi-ui.c:386
+#: ../avahi-ui/avahi-ui.c:388
 #, c-format
 msgid "Avahi resolver failure: %s"
 msgstr "Fallimento risolutore Avahi: %s"
 
-#: ../avahi-ui/avahi-ui.c:516
+#: ../avahi-ui/avahi-ui.c:518
 #, c-format
 msgid "Browsing for service type %s in domain %s failed: %s"
 msgstr "Esplorazione del tipo di servizio %s nel dominio %s non riuscita: %s"
 
-#: ../avahi-ui/avahi-ui.c:517 ../avahi-utils/avahi-browse.c:168
+#: ../avahi-ui/avahi-ui.c:519 ../avahi-utils/avahi-browse.c:168
 #: ../avahi-utils/avahi-browse.c:169 ../avahi-utils/avahi-browse.c:178
 #: ../avahi-utils/avahi-browse.c:179
 msgid "n/a"
 msgstr "n/d"
 
-#: ../avahi-ui/avahi-ui.c:647
+#: ../avahi-ui/avahi-ui.c:649
 #, c-format
 msgid "Avahi domain browser failure: %s"
 msgstr "Fallimento esploratore di domini Avahi: %s"
 
-#: ../avahi-ui/avahi-ui.c:682
+#: ../avahi-ui/avahi-ui.c:684
 #, c-format
 msgid "Failed to read Avahi domain: %s"
 msgstr "Lettura del dominio di Avahi non riuscita: %s"
 
-#: ../avahi-ui/avahi-ui.c:704
+#: ../avahi-ui/avahi-ui.c:706
 msgid "Browse service type list is empty!"
 msgstr "L'elenco esplora tipo di servizio è vuoto."
 
-#: ../avahi-ui/avahi-ui.c:715
+#: ../avahi-ui/avahi-ui.c:717
 #, c-format
 msgid "Failed to connect to Avahi server: %s"
 msgstr "Connessione al server Avahi non riuscita: %s"
 
-#: ../avahi-ui/avahi-ui.c:733
+#: ../avahi-ui/avahi-ui.c:735
 msgid "Browsing for services on <b>local network</b>:"
 msgstr "Esplorazione dei servizi su <b>rete locale</b>:"
 
-#: ../avahi-ui/avahi-ui.c:735
+#: ../avahi-ui/avahi-ui.c:737
 #, c-format
 msgid "Browsing for services in domain <b>%s</b>:"
 msgstr "Esplorazione dei servizi nel dominio <b>%s</b>:"
 
-#: ../avahi-ui/avahi-ui.c:771
+#: ../avahi-ui/avahi-ui.c:773
 #, c-format
 msgid "Failed to create browser for %s: %s"
 msgstr "Creazione dell'esploratore per %s non riuscita: %s"
 
-#: ../avahi-ui/avahi-ui.c:901
+#: ../avahi-ui/avahi-ui.c:903
 #, c-format
 msgid "Failed to create resolver for %s of type %s in domain %s: %s"
 msgstr ""
 "Creazione del risolutore per %s di tipo %s nel dominio %s non riuscita: %s"
 
-#: ../avahi-ui/avahi-ui.c:976
+#: ../avahi-ui/avahi-ui.c:978
 #, c-format
 msgid "Failed to create domain browser: %s"
 msgstr "Creazione dell'esploratore di domini non riuscita: %s"
 
-#: ../avahi-ui/avahi-ui.c:987
+#: ../avahi-ui/avahi-ui.c:989
 msgid "Change domain"
 msgstr "Cambia dominio"
 
-#: ../avahi-ui/avahi-ui.c:1027 ../avahi-ui/avahi-ui.c:1158
+#: ../avahi-ui/avahi-ui.c:1031 ../avahi-ui/avahi-ui.c:1162
 msgid "Browsing..."
 msgstr "Esplorazione..."
 
-#: ../avahi-ui/avahi-ui.c:1116
+#: ../avahi-ui/avahi-ui.c:1120
 msgid "Initializing..."
 msgstr "Inizializzazione..."
 
-#: ../avahi-ui/avahi-ui.c:1140
+#: ../avahi-ui/avahi-ui.c:1144
 msgid "Location"
 msgstr "Posizione"
 
-#: ../avahi-ui/avahi-ui.c:1145 ../avahi-utils/avahi-browse.c:553
+#: ../avahi-ui/avahi-ui.c:1149 ../avahi-utils/avahi-browse.c:553
 msgid "Name"
 msgstr "Nome"
 
-#: ../avahi-ui/avahi-ui.c:1150 ../avahi-utils/avahi-browse.c:553
+#: ../avahi-ui/avahi-ui.c:1154 ../avahi-utils/avahi-browse.c:553
 msgid "Type"
 msgstr "Tipo"
 
-#: ../avahi-ui/avahi-ui.c:1162
+#: ../avahi-ui/avahi-ui.c:1166
 msgid "_Domain..."
 msgstr "_Dominio..."
 
@@ -572,7 +567,8 @@ msgstr ": Cache esaurita\n"
 #, c-format
 msgid "Failed to resolve service '%s' of type '%s' in domain '%s': %s\n"
 msgstr ""
-"Risoluzione del servizio «%s» di tipo «%s» nel dominio «%s» non riuscita: %s\n"
+"Risoluzione del servizio «%s» di tipo «%s» nel dominio «%s» non riuscita: "
+"%s\n"
 
 #: ../avahi-utils/avahi-browse.c:340
 #, c-format
@@ -748,7 +744,7 @@ msgid "Host name conflict\n"
 msgstr "Conflitto di nome host\n"
 
 #: ../avahi-utils/avahi-publish.c:216
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "%s [options] %s <name> <type> <port> [<txt ...>]\n"
 "%s [options] %s <host-name> <address>\n"
@@ -777,6 +773,7 @@ msgstr ""
 "    -H --host=DOMAIN     L'host dove risiedono i servizi\n"
 "       --subtype=SUBTYPE Un sottotipo addizionale con cui registrare questo\n"
 "                         servizio\n"
+"    -R --no-reverse      Non pubblica le voci invertite con l'indirizzo\n"
 "    -f --no-fail         Non fallisce se il demone non è disponibile\n"
 
 #: ../avahi-utils/avahi-publish.c:303 ../avahi-utils/avahi-publish.c:318

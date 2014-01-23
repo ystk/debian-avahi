@@ -653,10 +653,6 @@ AvahiDnsPacket *avahi_recv_dns_packet_ipv4(
         goto fail;
     }
 
-    /* For corrupt packets FIONREAD returns zero size (See rhbz #607297) */
-    if (!ms)
-        goto fail;
-
     p = avahi_dns_packet_new(ms + AVAHI_DNS_PACKET_EXTRA_SIZE);
 
     io.iov_base = AVAHI_DNS_PACKET_DATA(p);
@@ -683,10 +679,14 @@ AvahiDnsPacket *avahi_recv_dns_packet_ipv4(
         goto fail;
     }
 
-    if (sa.sin_addr.s_addr == INADDR_ANY) {
+    /* For corrupt packets FIONREAD returns zero size (See rhbz #607297). So
+     * fail after having read them. */
+    if (!ms)
+        goto fail;
+
+    if (sa.sin_addr.s_addr == INADDR_ANY)
         /* Linux 2.4 behaves very strangely sometimes! */
         goto fail;
-    }
 
     assert(!(msg.msg_flags & MSG_CTRUNC));
     assert(!(msg.msg_flags & MSG_TRUNC));
@@ -726,7 +726,7 @@ AvahiDnsPacket *avahi_recv_dns_packet_ipv4(
                 case IP_PKTINFO: {
                     struct in_pktinfo *i = (struct in_pktinfo*) CMSG_DATA(cmsg);
 
-                    if (ret_iface)
+                    if (ret_iface && i->ipi_ifindex > 0)
                         *ret_iface = (int) i->ipi_ifindex;
 
                     if (ret_dst_address)
@@ -742,12 +742,16 @@ AvahiDnsPacket *avahi_recv_dns_packet_ipv4(
                 case IP_RECVIF: {
                     struct sockaddr_dl *sdl = (struct sockaddr_dl *) CMSG_DATA (cmsg);
 
-                    if (ret_iface)
+                    if (ret_iface) {
 #ifdef __sun
-                        *ret_iface = *(uint_t*) sdl;
+                        if (*(uint_t*) sdl > 0)
+                            *ret_iface = *(uint_t*) sdl;
 #else
-                        *ret_iface = (int) sdl->sdl_index;
+
+                        if (sdl->sdl_index > 0)
+                            *ret_iface = (int) sdl->sdl_index;
 #endif
+                    }
 
                     break;
                 }
@@ -763,7 +767,7 @@ AvahiDnsPacket *avahi_recv_dns_packet_ipv4(
 #endif
 
                 default:
-                    avahi_log_warn("Unhandled cmsg_type : %d", cmsg->cmsg_type);
+                    avahi_log_warn("Unhandled cmsg_type: %d", cmsg->cmsg_type);
                     break;
             }
         }
@@ -810,10 +814,6 @@ AvahiDnsPacket *avahi_recv_dns_packet_ipv6(
         goto fail;
     }
 
-    /* For corrupt packets FIONREAD returns zero size (See rhbz #607297) */
-    if (!ms)
-        goto fail;
-
     p = avahi_dns_packet_new(ms + AVAHI_DNS_PACKET_EXTRA_SIZE);
 
     io.iov_base = AVAHI_DNS_PACKET_DATA(p);
@@ -840,6 +840,11 @@ AvahiDnsPacket *avahi_recv_dns_packet_ipv6(
 
         goto fail;
     }
+
+    /* For corrupt packets FIONREAD returns zero size (See rhbz #607297). So
+     * fail after having read them. */
+    if (!ms)
+        goto fail;
 
     assert(!(msg.msg_flags & MSG_CTRUNC));
     assert(!(msg.msg_flags & MSG_TRUNC));
@@ -873,7 +878,7 @@ AvahiDnsPacket *avahi_recv_dns_packet_ipv6(
                 case IPV6_PKTINFO: {
                     struct in6_pktinfo *i = (struct in6_pktinfo*) CMSG_DATA(cmsg);
 
-                    if (ret_iface)
+                    if (ret_iface && i->ipi6_ifindex > 0)
                         *ret_iface = i->ipi6_ifindex;
 
                     if (ret_dst_address)
@@ -884,7 +889,7 @@ AvahiDnsPacket *avahi_recv_dns_packet_ipv6(
                 }
 
                 default:
-                    avahi_log_warn("Unhandled cmsg_type : %d", cmsg->cmsg_type);
+                    avahi_log_warn("Unhandled cmsg_type: %d", cmsg->cmsg_type);
                     break;
             }
         }
