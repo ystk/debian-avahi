@@ -1,11 +1,169 @@
-avahi (0.6.27-2+squeeze1) stable-security; urgency=high
+avahi (0.6.31-2) unstable; urgency=low
 
+  * Use recommended maintscript versioning scheme.
+  * The avahi-dnsconfd init script doesn't support reload but provides a
+    refresh action, so list that instead in the usage help message.
+  * Update ifupdown hooks for avahi-daemon and avahi-autoipd. Drop the usage
+    of ADDRFAM=NetworkManager, since network-manager no longer uses that. Run
+    avahi-daemon only for ADDRFAM inet and inet6. (Closes: #699749)
+
+ -- Michael Biebl <biebl@debian.org>  Wed, 06 Mar 2013 22:58:55 +0100
+
+avahi (0.6.31-1) unstable; urgency=low
+
+  * New upstream release.
+  * Mark private stdb_* symbols in libavahi-ui and libavahi-ui-gtk3 as
+    optional.
+  * Bump Build-Depends on debhelper to (>= 9).
+  * Bump Standards-Version to 3.9.3. No further changes.
+  * Use new dh_installdeb maintscript facility to (re)move the old conffiles
+    for avahi-autoipd and avahi-dnsconfd.
+
+ -- Michael Biebl <biebl@debian.org>  Sun, 04 Mar 2012 05:23:49 +0100
+
+avahi (0.6.30-6) unstable; urgency=low
+
+  * Switch to dh_python2. (Closes: #637552)
+  * Simplify postinst for avahi-autoipd and avahi-daemon.
+  * Rebuild to enable hardened build flags. (Closes: #655188)
+  * Use term GLib consistently in the package description. (Closes: #633783)
+
+ -- Michael Biebl <biebl@debian.org>  Tue, 10 Jan 2012 00:59:49 +0100
+
+avahi (0.6.30-5) unstable; urgency=low
+
+  * debian/control: Make python-avahi Architecture: any so the path to
+    service-types.db in ServiceTypeDatabase.py is correctly set.
+    (Closes: #632437)
+
+ -- Michael Biebl <biebl@debian.org>  Sat, 02 Jul 2011 10:37:15 +0200
+
+avahi (0.6.30-4) unstable; urgency=low
+
+  * Add multiarch support. Patch courtesy of Steve Langasek. (Closes: #631836)
+
+ -- Michael Biebl <biebl@debian.org>  Fri, 01 Jul 2011 02:28:05 +0200
+
+avahi (0.6.30-3) unstable; urgency=low
+
+  * Enable GTK3 support. (Closes: #610772)
+    - Add Build-Depends on libgtk-3-dev.
+    - Add libavahi-ui-gtk3-0 and libavahi-ui-gtk3-dev package.
+    - Make libavahi-ui-gtk3-dev conflict with libavahi-ui-dev, as both
+      packages ship the same header file.
+    - Pass --enable-gtk3 to configure.
+
+ -- Michael Biebl <biebl@debian.org>  Fri, 29 Apr 2011 16:50:38 +0200
+
+avahi (0.6.30-2) unstable; urgency=low
+
+  * Remove Qt3 integration library. With KDE3 gone, there is no more package
+    using it. (Closes: 604341)
+    - Drop Build-Depends on libqt3-mt-dev.
+    - Drop libavahi-qt3-1 and libavahi-qt3-dev package.
+    - Update debian/rules, pass --disable-qt3 to configure.
+  * Remove libtool .la files for libavahi-client and libavahi-common.
+  * Stop cleaning up dependency_libs from libtool .la files. No longer
+    required as we don't install any .la files anymore.
+  * Bump Standards-Version to 3.9.2. No further changes.
+
+ -- Michael Biebl <biebl@debian.org>  Mon, 11 Apr 2011 04:44:42 +0200
+
+avahi (0.6.30-1) unstable; urgency=low
+
+  * New upstream release.
+    - iface: look for both IFA_ADDRESS and IFA_LOCAL. (Closes: #617948)
+
+ -- Michael Biebl <biebl@debian.org>  Mon, 04 Apr 2011 02:45:41 +0200
+
+avahi (0.6.29-1) unstable; urgency=low
+
+  * New upstream release.
+  * Remove patches, merged upstream
+    - debian/patches/03_read_null_udp_packets.patch
+    - debian/patches/04-fix_netlink_flags_for_dump_operations.patch
+  * debian/avahi-daemon.links
+    - Enable avahi-daemon by default when using systemd, so it can be started
+      via D-Bus activation, socket activation and multi-user.target.
+  * debian/avahi-dnsconfd.links
+    - Enable avahi-dnsconfd by default when using systemd. It will be started
+      by multi-user.target.
+
+ -- Michael Biebl <biebl@debian.org>  Fri, 11 Mar 2011 01:58:46 +0100
+
+avahi (0.6.28-5) unstable; urgency=low
+
+  * debian/rules
+    - Enable stack smashing protector for all architectures and let configure
+      check if it is supported.
+  * debian/patches/04-fix_netlink_flags_for_dump_operations.patch
+    - Use correct flag combination for rtnetlink dump operations.
+      Thanks to Pablo Neira Ayuso for the patch. (Closes: #610281)
+
+ -- Michael Biebl <biebl@debian.org>  Mon, 07 Mar 2011 10:35:51 +0100
+
+avahi (0.6.28-4) unstable; urgency=high
+
+  * Bump debhelper compatibility level to 8 and update build dependency
+    on debhelper accordingly.
   * debian/patches/03_read_null_udp_packets.patch
     - Read NULL UDP packets else we end up in an infinite loop using 100% CPU
       and DoS of Avahi. (Closes: #614785, Fixes: CVE-2011-1002)
   * Urgency high for the security fix.
 
- -- Michael Biebl <biebl@debian.org>  Wed, 23 Feb 2011 15:59:15 +0100
+ -- Michael Biebl <biebl@debian.org>  Wed, 23 Feb 2011 15:34:21 +0100
+
+avahi (0.6.28-3) unstable; urgency=low
+
+  * debian/avahi-daemon.init
+    - Map force-reload action to reload, not restart.
+    - Stop trying to load the capability kernel module. Capabilities support
+      is enabled by default and can no longer be built as a module.
+    - Don't check daemon status twice on restart.
+    - General cleanup and white space fixes.
+  * debian/avahi-dnsconfd.init
+    - Don't check daemon status twice on restart.
+    - Don't map reload action to restart as it does not belong there.
+      Reload should probably be an alias for refresh, but drop it for now.
+    - General cleanup and white space fixes.
+  * Remove avahi-autoipd compat symlinks for dhcp3-client.
+  * Upload to unstable.
+
+ -- Michael Biebl <biebl@debian.org>  Mon, 07 Feb 2011 03:54:51 +0100
+
+avahi (0.6.28-2) experimental; urgency=low
+
+  * debian/rules: Fix and simplify .la dependency_libs cleanup.
+  * Stop installing libtool .la files for those packages which have no more
+    reverse dependencies.
+  * Remove pre-lenny upgrade code from maintainer scripts.
+
+ -- Michael Biebl <biebl@debian.org>  Wed, 01 Dec 2010 21:21:24 +0100
+
+avahi (0.6.28-1) experimental; urgency=low
+
+  * New upstream release.
+  * Remove debian/patches/02_avahi_client.patch, merged upstream.
+  * Move from cdbs to dh
+    - Drop Build-Depends on cdbs.
+    - Bump Build-Depends on debhelper to (>= 7.0.50~) for override targets.
+    - Convert debian/rules to use dh.
+    - Drop debian/clean-la.mk (merged into debian/rules).
+  * Install systemd unit files for avahi-daemon and avahi-dnsconfd.
+  * Install D-Bus system service file for avahi-daemon.
+
+ -- Michael Biebl <biebl@debian.org>  Thu, 18 Nov 2010 08:05:00 +0100
+
+avahi (0.6.27-3) unstable; urgency=low
+
+  * debian/control
+    - Update Vcs-* fields: Move packaging from svn to git.
+    - Bump Standards-Version to 3.9.1. No further changes.
+  * debian/patches/02_avahi_client.patch
+    - Replace patch with upstream commit 9a4db66 which uses Ping() to test
+      whether avahi is around.
+
+ -- Michael Biebl <biebl@debian.org>  Thu, 18 Nov 2010 05:47:11 +0100
 
 avahi (0.6.27-2) unstable; urgency=low
 
@@ -910,7 +1068,7 @@ avahi (0.6.10-1) unstable; urgency=high
   * New upstream release
   * Urgency high, contains security fixes
     - Local DOS via unspecified mDNS name conflicts (CVE-2006-2288)
-    - Local buffer overflow in avahi-core (CVS-2006-2289)
+    - Local buffer overflow in avahi-core (CVE-2006-2289)
   * No longer ship the avahi cli bindings, they now have their own source
     package (Closes: #360881)
   * Don't build-depend on libcap-dev on hurd, kfreebsd-* and netbsd-i386 archs

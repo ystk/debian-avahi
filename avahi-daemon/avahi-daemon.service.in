@@ -18,7 +18,6 @@
 [Unit]
 Description=Avahi mDNS/DNS-SD Stack
 Requires=avahi-daemon.socket
-After=syslog.target
 
 [Service]
 Type=dbus
@@ -30,3 +29,4 @@ NotifyAccess=main
 [Install]
 WantedBy=multi-user.target
 Also=avahi-daemon.socket
+Alias=dbus-org.freedesktop.Avahi.service

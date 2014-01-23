@@ -1,21 +1,25 @@
 # Russian translation for avahi
 # Copyright (c) 2008 Rosetta Contributors and Canonical Ltd 2008
 # This file is distributed under the same license as the avahi package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2008.
 #
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2008.
+# Yuri Kozlov <yuray@komyakino.ru>, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: avahi\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-07-13 03:02+0200\n"
-"PO-Revision-Date: 2008-03-26 03:20+0000\n"
-"Last-Translator: Артём Попов <artfwo@gmail.com>\n"
-"Language-Team: Russian <ru@li.org>\n"
+"POT-Creation-Date: 2011-04-02 03:23+0200\n"
+"PO-Revision-Date: 2010-08-15 13:16+0400\n"
+"Last-Translator: Yuri Kozlov <yuray@komyakino.ru>\n"
+"Language-Team: Russian <debian-l10n-russian@lists.debian.org>\n"
+"Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Launchpad-Export-Date: 2008-04-01 04:32+0000\n"
-"X-Generator: Launchpad (build Unknown)\n"
+"X-Generator: Lokalize 1.0\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
 #: ../avahi-common/error.c:30
 msgid "OK"
@@ -43,7 +47,7 @@ msgstr "Не найден подходящий сетевой протокол"
 
 #: ../avahi-common/error.c:36
 msgid "Invalid DNS TTL"
-msgstr "Неверное время кэширования DNS"
+msgstr "Неверный TTL DNS"
 
 #: ../avahi-common/error.c:37
 msgid "Resource record key is pattern"
@@ -51,7 +55,7 @@ msgstr "Ключ записи ресурса является шаблоном"
 
 #: ../avahi-common/error.c:38
 msgid "Local name collision"
-msgstr "Коллизия локальных имён"
+msgstr "Перекрытие локальных имён"
 
 #: ../avahi-common/error.c:39
 msgid "Invalid record"
@@ -111,7 +115,7 @@ msgstr "Неожиданная ошибка D-Bus"
 
 #: ../avahi-common/error.c:55
 msgid "Daemon connection failed"
-msgstr "Не удалось соединиться с демоном"
+msgstr "Не удалось соединиться со службой"
 
 #: ../avahi-common/error.c:56
 msgid "Memory exhausted"
@@ -123,7 +127,7 @@ msgstr "Переданный объект недействителен"
 
 #: ../avahi-common/error.c:58
 msgid "Daemon not running"
-msgstr "Демон не запущен"
+msgstr "Служба не запущена"
 
 #: ../avahi-common/error.c:59
 msgid "Invalid interface index"
@@ -211,7 +215,7 @@ msgstr "Неверный тип DNS"
 
 #: ../avahi-common/error.c:82
 msgid "Invalid DNS class"
-msgstr "Не верный класс DNS"
+msgstr "Неверный класс DNS"
 
 #: ../avahi-common/error.c:83
 msgid "Not supported"
@@ -240,241 +244,230 @@ msgstr "Неверный код ошибки"
 #: ../avahi-discover-standalone/avahi-discover.ui.h:1
 #: ../avahi-python/avahi-discover/avahi-discover.py:76
 msgid "<i>No service currently selected.</i>"
-msgstr ""
+msgstr "<i>Служба не выбрана.</i>"
 
 #: ../avahi-discover-standalone/avahi-discover.ui.h:2
 msgid "Avahi Discovery"
-msgstr ""
+msgstr "Avahi Discovery"
 
 #: ../avahi-python/avahi-discover/avahi-discover.desktop.in.in.h:1
 msgid "Avahi Zeroconf Browser"
-msgstr ""
+msgstr "Обозреватель Avahi Zeroconf"
 
 #: ../avahi-python/avahi-discover/avahi-discover.desktop.in.in.h:2
-#, fuzzy
 msgid "Browse for Zeroconf services available on your network"
-msgstr "Поиск служб в <b>локальной сети</b>:"
+msgstr "Поиск служб Zeroconf в локальной сети"
 
 #: ../avahi-python/avahi-discover/avahi-discover.py:224
 msgid "TXT"
-msgstr ""
+msgstr "TXT"
 
 #: ../avahi-python/avahi-discover/avahi-discover.py:226
 msgid "TXT Data:"
-msgstr ""
+msgstr "Данные TXT:"
 
 #: ../avahi-python/avahi-discover/avahi-discover.py:226
-#, fuzzy
 msgid "empty"
-msgstr "Пустая группа"
+msgstr "пусто"
 
 #: ../avahi-python/avahi-discover/avahi-discover.py:228
-#, fuzzy
 msgid "Service Type:"
-msgstr "Имя службы"
+msgstr "Тип службы:"
 
 #: ../avahi-python/avahi-discover/avahi-discover.py:229
-#, fuzzy
 msgid "Service Name:"
-msgstr "Имя службы"
+msgstr "Имя службы:"
 
 #: ../avahi-python/avahi-discover/avahi-discover.py:230
-#, fuzzy
 msgid "Domain Name:"
-msgstr "_Домен..."
+msgstr "Название домена:"
 
 #: ../avahi-python/avahi-discover/avahi-discover.py:231
 msgid "Interface:"
-msgstr ""
+msgstr "Интерфейс:"
 
 #: ../avahi-python/avahi-discover/avahi-discover.py:232
 msgid "Address:"
-msgstr ""
+msgstr "Адрес:"
 
 #: ../avahi-ui/avahi-ui.c:185
 msgid "Browse Service Types"
-msgstr ""
+msgstr "Типы искомых служб"
 
 #: ../avahi-ui/avahi-ui.c:185
 msgid "A NULL terminated list of service types to browse for"
-msgstr ""
+msgstr "Список типов искомых служб, завершающийся NULL"
 
 #: ../avahi-ui/avahi-ui.c:190
-#, fuzzy
 msgid "Domain"
-msgstr "_Домен..."
+msgstr "Домен"
 
 #: ../avahi-ui/avahi-ui.c:190
 msgid "The domain to browse in, or NULL for the default domain"
-msgstr ""
+msgstr "Домен поиска или домен по умолчанию, если NULL"
 
 #: ../avahi-ui/avahi-ui.c:196
-#, fuzzy
 msgid "Service Type"
-msgstr "Имя службы"
+msgstr "Тип службы"
 
 #: ../avahi-ui/avahi-ui.c:196
 msgid "The service type of the selected service"
-msgstr ""
+msgstr "Тип выбранной службы"
 
-#: ../avahi-ui/avahi-ui.c:202 ../avahi-ui/avahi-ui.c:1019
+#: ../avahi-ui/avahi-ui.c:202 ../avahi-ui/avahi-ui.c:1023
 msgid "Service Name"
 msgstr "Имя службы"
 
 #: ../avahi-ui/avahi-ui.c:202
 msgid "The service name of the selected service"
-msgstr ""
+msgstr "Имя выбранной службы"
 
 #: ../avahi-ui/avahi-ui.c:208
 msgid "Address"
-msgstr ""
+msgstr "Адрес"
 
 #: ../avahi-ui/avahi-ui.c:208
 msgid "The address of the resolved service"
-msgstr ""
+msgstr "Адрес определённого устройства"
 
 #: ../avahi-ui/avahi-ui.c:213
 msgid "Port"
-msgstr ""
+msgstr "Порт"
 
 #: ../avahi-ui/avahi-ui.c:213
 msgid "The IP port number of the resolved service"
-msgstr ""
+msgstr "Номер порта протокола IP определённого устройства"
 
 #: ../avahi-ui/avahi-ui.c:219
-#, fuzzy
 msgid "Host Name"
-msgstr "Имя"
+msgstr "Имя узла"
 
 #: ../avahi-ui/avahi-ui.c:219
 msgid "The host name of the resolved service"
-msgstr ""
+msgstr "Имя узла определённого устройства"
 
 #: ../avahi-ui/avahi-ui.c:225
 msgid "TXT Data"
-msgstr ""
+msgstr "Данные TXT"
 
 #: ../avahi-ui/avahi-ui.c:225
 msgid "The TXT data of the resolved service"
-msgstr ""
+msgstr "Данные TXT определённого устройства"
 
 #: ../avahi-ui/avahi-ui.c:230
-#, fuzzy
 msgid "Resolve Service"
-msgstr "Неверное имя службы"
+msgstr "Определение службы"
 
 #: ../avahi-ui/avahi-ui.c:230
 msgid "Resolve the selected service automatically before returning"
-msgstr ""
+msgstr "Автоматически определить выбранную службу перед возвратом"
 
 #: ../avahi-ui/avahi-ui.c:236
-#, fuzzy
 msgid "Resolve Service Host Name"
-msgstr "Неверное имя службы"
+msgstr "Определить имя узла службы"
 
 #: ../avahi-ui/avahi-ui.c:236
 msgid ""
 "Resolve the host name of the selected service automatically before returning"
-msgstr ""
+msgstr "Автоматически определить имя узла выбранной службы перед возвратом"
 
 #: ../avahi-ui/avahi-ui.c:242
 msgid "Address family"
-msgstr ""
+msgstr "Адресное семейство"
 
 #: ../avahi-ui/avahi-ui.c:242
 msgid "The address family for host name resolution"
-msgstr ""
+msgstr "Определение адресного семейства для имени узла"
 
-#: ../avahi-ui/avahi-ui.c:324
+#: ../avahi-ui/avahi-ui.c:326
 #, c-format
 msgid "Avahi client failure: %s"
 msgstr "Ошибка клиента Avahi: %s"
 
-#: ../avahi-ui/avahi-ui.c:386
+#: ../avahi-ui/avahi-ui.c:388
 #, c-format
 msgid "Avahi resolver failure: %s"
 msgstr "Ошибка преобразователя имён Avahi: %s"
 
-#: ../avahi-ui/avahi-ui.c:516
+#: ../avahi-ui/avahi-ui.c:518
 #, c-format
 msgid "Browsing for service type %s in domain %s failed: %s"
 msgstr "Не удалось выполнить поиск службы %s в домене %s: %s"
 
-#: ../avahi-ui/avahi-ui.c:517 ../avahi-utils/avahi-browse.c:168
+#: ../avahi-ui/avahi-ui.c:519 ../avahi-utils/avahi-browse.c:168
 #: ../avahi-utils/avahi-browse.c:169 ../avahi-utils/avahi-browse.c:178
 #: ../avahi-utils/avahi-browse.c:179
 msgid "n/a"
 msgstr "н/д"
 
-#: ../avahi-ui/avahi-ui.c:647
+#: ../avahi-ui/avahi-ui.c:649
 #, c-format
 msgid "Avahi domain browser failure: %s"
 msgstr "Ошибка обозревателя доменов Avahi: %s"
 
-#: ../avahi-ui/avahi-ui.c:682
+#: ../avahi-ui/avahi-ui.c:684
 #, c-format
 msgid "Failed to read Avahi domain: %s"
 msgstr "Не удалось открыть домен Avahi: %s"
 
-#: ../avahi-ui/avahi-ui.c:704
+#: ../avahi-ui/avahi-ui.c:706
 msgid "Browse service type list is empty!"
-msgstr ""
+msgstr "Список типов искомых служб пуст!"
 
-#: ../avahi-ui/avahi-ui.c:715
+#: ../avahi-ui/avahi-ui.c:717
 #, c-format
 msgid "Failed to connect to Avahi server: %s"
 msgstr "Не удалось подключиться к серверу Avahi: %s"
 
-#: ../avahi-ui/avahi-ui.c:733
+#: ../avahi-ui/avahi-ui.c:735
 msgid "Browsing for services on <b>local network</b>:"
 msgstr "Поиск служб в <b>локальной сети</b>:"
 
-#: ../avahi-ui/avahi-ui.c:735
+#: ../avahi-ui/avahi-ui.c:737
 #, c-format
 msgid "Browsing for services in domain <b>%s</b>:"
 msgstr "Поиск служб в домене <b>%s</b>:"
 
-#: ../avahi-ui/avahi-ui.c:771
+#: ../avahi-ui/avahi-ui.c:773
 #, c-format
 msgid "Failed to create browser for %s: %s"
 msgstr "Не удалось создать обозреватель для %s: %s"
 
-#: ../avahi-ui/avahi-ui.c:901
+#: ../avahi-ui/avahi-ui.c:903
 #, c-format
 msgid "Failed to create resolver for %s of type %s in domain %s: %s"
 msgstr "Не удалось создать преобразователь имён для %s типа %s в домене %s: %s"
 
-#: ../avahi-ui/avahi-ui.c:976
+#: ../avahi-ui/avahi-ui.c:978
 #, c-format
 msgid "Failed to create domain browser: %s"
 msgstr "Не удалось создать обозреватель доменов: %s"
 
-#: ../avahi-ui/avahi-ui.c:987
+#: ../avahi-ui/avahi-ui.c:989
 msgid "Change domain"
 msgstr "Изменить домен"
 
-#: ../avahi-ui/avahi-ui.c:1027 ../avahi-ui/avahi-ui.c:1158
-#, fuzzy
+#: ../avahi-ui/avahi-ui.c:1031 ../avahi-ui/avahi-ui.c:1162
 msgid "Browsing..."
 msgstr "Поиск..."
 
-#: ../avahi-ui/avahi-ui.c:1116
+#: ../avahi-ui/avahi-ui.c:1120
 msgid "Initializing..."
 msgstr "Инициализация..."
 
-#: ../avahi-ui/avahi-ui.c:1140
+#: ../avahi-ui/avahi-ui.c:1144
 msgid "Location"
-msgstr ""
+msgstr "Расположение"
 
-#: ../avahi-ui/avahi-ui.c:1145 ../avahi-utils/avahi-browse.c:553
+#: ../avahi-ui/avahi-ui.c:1149 ../avahi-utils/avahi-browse.c:553
 msgid "Name"
 msgstr "Имя"
 
-#: ../avahi-ui/avahi-ui.c:1150 ../avahi-utils/avahi-browse.c:553
+#: ../avahi-ui/avahi-ui.c:1154 ../avahi-utils/avahi-browse.c:553
 msgid "Type"
 msgstr "Тип"
 
-#: ../avahi-ui/avahi-ui.c:1162
+#: ../avahi-ui/avahi-ui.c:1166
 msgid "_Domain..."
 msgstr "_Домен..."
 
@@ -489,6 +482,13 @@ msgid ""
 "    -S --shell           Browse both SSH and VNC\n"
 "    -d --domain=DOMAIN   The domain to browse in\n"
 msgstr ""
+"%s [параметры]\n"
+"\n"
+"    -h --help            Показать эту справку\n"
+"    -s --ssh             Вывести список доступных серверов SSH\n"
+"    -v --vnc             Вывести список доступных серверов VNC\n"
+"    -S --shell           Вывести список доступных серверов SSH и VNC\n"
+"    -d --domain=ДОМЕН    Домен поиска серверов\n"
 
 #: ../avahi-ui/bssh.c:101 ../avahi-utils/avahi-browse.c:775
 #, c-format
@@ -532,19 +532,19 @@ msgstr "Отменено.\n"
 
 #: ../avahi-ui/bssh.desktop.in.in.h:1
 msgid "Avahi SSH Server Browser"
-msgstr ""
+msgstr "Навигатор Avahi по серверам SSH"
 
 #: ../avahi-ui/bssh.desktop.in.in.h:2
 msgid "Browse for Zeroconf-enabled SSH Servers"
-msgstr ""
+msgstr "Просмотр списка серверов SSH с включённой службой Zeroconf"
 
 #: ../avahi-ui/bvnc.desktop.in.in.h:1
 msgid "Avahi VNC Server Browser"
-msgstr ""
+msgstr "Навигатор Avahi по серверам VNC"
 
 #: ../avahi-ui/bvnc.desktop.in.in.h:2
 msgid "Browse for Zeroconf-enabled VNC Servers"
-msgstr ""
+msgstr "Просмотр списка серверов VNC с включённой службой Zeroconf"
 
 #: ../avahi-utils/avahi-browse.c:107
 #, c-format
@@ -732,7 +732,7 @@ msgid "Host name conflict\n"
 msgstr "Конфликт имени узла\n"
 
 #: ../avahi-utils/avahi-publish.c:216
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "%s [options] %s <name> <type> <port> [<txt ...>]\n"
 "%s [options] %s <host-name> <address>\n"
@@ -752,15 +752,17 @@ msgstr ""
 "%s [параметры] %s <имя> <тип> <порт> [<текст...>]\n"
 "%s [параметры] %s <имя узла> <адрес>\n"
 "\n"
-"    -h --help            Вывести данную справку\n"
+"    -h --help            Вывести эту справку\n"
 "    -V --version         Вывести версию\n"
 "    -s --service         Опубликовать службу\n"
 "    -a --address         Опубликовать адрес\n"
 "    -v --verbose         Включить подробный режим\n"
-"    -d --domain=DOMAIN   Домен для публикации службы\n"
-"    -H --host=DOMAIN     Узел, на котором размещается служба\n"
-"       --subtype=SUBTYPE Дополнительный подтип для регистрации этой службы\n"
-"    -f --no-fail         Не завершать работу, если демон недоступен\n"
+"    -d --domain=ДОМЕН    Домен для публикации службы\n"
+"    -H --host=ДОМЕН      Узел, на котором размещается служба\n"
+"       --subtype=ПОДТИП  Дополнительный подтип для регистрации этой службы\n"
+"    -R --no-reverse      Не опубликовывать элемент обратного адреса\n"
+"    -f --no-fail         Не завершать работу, если процесс службы "
+"недоступен\n"
 
 #: ../avahi-utils/avahi-publish.c:303 ../avahi-utils/avahi-publish.c:318
 #, c-format
@@ -775,7 +777,7 @@ msgstr "Ошибка разбора номера порта: %s\n"
 #: ../avahi-utils/avahi-publish.c:361 ../avahi-utils/avahi-resolve.c:246
 #, c-format
 msgid "No command specified.\n"
-msgstr "Не указана команда\n"
+msgstr "Не указана команда.\n"
 
 #: ../avahi-utils/avahi-resolve.c:89
 #, c-format
