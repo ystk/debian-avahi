@@ -1,3 +1,49 @@
+avahi (0.6.31-4) unstable; urgency=medium
+
+  * Team upload.
+  * d/p/so_reuseport-may-not-exist-in-running-kernel.patch: Do not exit
+    avahi-daemon if we cannot set SO_REUSEPORT on the socket. This patch has
+    be taken from Ubuntu, thanks to them (Closes: #732009)
+  * debian/patches/avahi-core-reserve-space-for-record-data-when-size-estimate.patch:
+    avahi-core: reserve space for record data when size estimate. This
+    prevents avahi-daemon from falling into an invalid loop when many CUPS/IPP
+    printer shares get registered (Closes: #693604)
+  * debian/libavahi-core7.symbols: Add 2 new symbols exported by the previous
+    patch
+  * debian/patches/suse-patch-gtk-box.patch: Don't use GTK vbox API which is
+    deprecated when compiling for GTK3.
+  * debian/control: Bump Standards-Version to 3.9.5 (no further changes)
+
+ -- Laurent Bigonville <bigon@debian.org>  Thu, 26 Dec 2013 18:24:41 +0100
+
+avahi (0.6.31-3) unstable; urgency=low
+
+  * Team upload.
+  [ Laurent Bigonville ]
+  * debian/control: Use canonical URL's for Vcs-* fields
+  * debian/avahi-daemon.init: Add "avahi-daemon" to the Provides list
+    (Closes: #730546)
+  * debian/avahi-dnsconfd.init: Depend against the new avahi-daemon Provides
+  * debian/avahi-daemon.links, debian/avahi-dnsconfd.links, debian/control,
+    debian/rules: Do not explicitly create systemd symlinks but rely on
+    dh-systemd to do the correct thing
+  * debian/control: Drop duplicate Section to please lintian
+  * debian/control: Bump Standards-Version to 3.9.4 (no further changes)
+  * debian/control, debian/rules: Update config.{guess,sub} during the build
+  * debian/rules: Use debhelper 9 preferred way to set LDFLAGS (Closes: #662204)
+  * debian/rules: Pass --as-needed to dh_autoreconf and add it to LDFLAGS to
+    limit runtime dependencies
+  * debian/avahi-daemon.init, avahi-dnsconfd.init: Fix initscripts to return
+    an error in the appropriate cases (Closes: #718716)
+
+  [ Hector Oron ]
+  * debian/patch/no-deprecations.patch: Don't disable deprecated functions
+    (Closes: #729124)
+  * debian/rules: run autoreconf at build time.
+  * debian/control: add dh-autoreconf build depend
+
+ -- Laurent Bigonville <bigon@debian.org>  Sat, 07 Dec 2013 16:24:13 +0100
+
 avahi (0.6.31-2) unstable; urgency=low
 
   * Use recommended maintscript versioning scheme.
