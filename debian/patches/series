@@ -4,3 +4,4 @@ avahi-core-reserve-space-for-record-data-when-size-estimate.patch
 suse-patch-gtk-box.patch
 so_reuseport-may-not-exist-in-running-kernel.patch
 no-deprecations.patch
+CVE-2021-3468.patch

@@ -39,6 +39,7 @@ Depends: ${shlibs:Depends},
          adduser,
          dbus (>= 0.60),
          lsb-base (>= 3.0-6),
+         sudo,
          bind9-host | host
 Recommends: libnss-mdns
 Suggests: avahi-autoipd
