@@ -5,3 +5,4 @@ suse-patch-gtk-box.patch
 so_reuseport-may-not-exist-in-running-kernel.patch
 no-deprecations.patch
 CVE-2021-3468.patch
+CVE-2023-1981.patch

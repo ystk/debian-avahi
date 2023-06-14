@@ -1,3 +1,12 @@
+avahi (0.6.31-5+deb8u2) jessie-security; urgency=high
+
+  * Non-maintainer upload by the Debian ELTS security team.
+  * CVE-2023-1981: Fix an local Denial of Service (DoS) vulnerability
+    where the avahi-daemon process could have been crashed over the DBus
+    message bus. (Closes: #1034594)
+
+ -- Chris Lamb <lamby@debian.org>  Tue, 02 May 2023 11:20:30 -0700
+
 avahi (0.6.31-5+deb8u1) jessie-security; urgency=high
 
   * Non-maintainer upload by the ELTS team.
