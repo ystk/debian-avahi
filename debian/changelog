@@ -1,3 +1,16 @@
+avahi (0.6.31-5+deb8u3) jessie-security; urgency=medium
+
+  * Non-maintainer upload by the ELTS Team.
+  * CVE-2023-38469: Reachable assertion in avahi_dns_packet_append_record
+  * CVE-2023-38470: Reachable assertion in avahi_escape_label
+  * CVE-2023-38471: Reachable assertion in dbus_set_host_name
+  * CVE-2023-38472: Reachable assertion in avahi_rdata_parse
+  * CVE-2023-38473: Reachable assertion in avahi_alternative_host_name
+  * Fixed a GetAlternativeServiceName regression introduced
+    by the CVE-2023-1981 fix in 0.6.31-5+deb8u2.
+
+ -- Adrian Bunk <bunk@debian.org>  Mon, 09 Dec 2024 05:30:57 +0200
+
 avahi (0.6.31-5+deb8u2) jessie-security; urgency=high
 
   * Non-maintainer upload by the Debian ELTS security team.

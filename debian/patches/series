@@ -6,3 +6,8 @@ so_reuseport-may-not-exist-in-running-kernel.patch
 no-deprecations.patch
 CVE-2021-3468.patch
 CVE-2023-1981.patch
+0001-core-reject-overly-long-TXT-resource-records.patch
+0002-Ensure-each-label-is-at-least-one-byte-long.patch
+0003-core-extract-host-name-using-avahi_unescape_label.patch
+0004-core-make-sure-there-is-rdata-to-process-before-pars.patch
+0005-common-derive-alternative-host-name-from-its-unescap.patch
